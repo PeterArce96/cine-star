@@ -1,0 +1,122 @@
+:root {
+    scroll-behavior: smooth;
+    --primary-theme-color: #20232a;
+    --secondary-theme-color: #282c34;
+    --primary-text-color: #fff;
+    --secondary-text-color: #aaa;
+    --primary-shadow-color: #8888;
+    --secondary-shadow-color: #eee8;
+    --button-color: #61dafb;
+    --button-color-active: #fff;
+    --button-text-color: #000;
+    --primary-highlight-color: #61dafb;
+    --secondary-highlight-color: #ffd700;
+    --invalid-color: #dc143c;
+    --padding-section: 4rem 0;
+    --padding-container: 0 2rem;
+    --max-width-container: 1024px;
+    --border-radius: 0.5rem;
+    --all-transitions: all 0.25s;
+}
+.header{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--secondary-shadow-color);
+}
+
+.header-nav{
+    padding: 0.5rem 0;
+    box-shadow: 0 0.125rem 0.125rem 0 var(--primary-shadow-color);
+}
+.header-nav__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--max-width-container);
+    margin: auto;
+    padding: var(--padding-container);
+}
+.header-nav__link-menu-container{
+    display: flex;
+    gap: 2rem;
+}
+.header-nav__link-logo-container{
+    display: flex;
+    height: 2rem;
+}
+.header-nav__link-logo{
+    height: 100%;
+}
+.header-nav__menu-link-list{
+    position: fixed;
+    list-style: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    background-image: linear-gradient(to top, var(--primary-theme-color), var(--secondary-theme-color));
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--all-transitions);
+}
+
+.header-nav__menu-link-item{
+    display: flex;
+}
+.header-nav__menu-link{
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--primary-text-color);
+    transition: var(--all-transitions);
+}
+.header-nav__menu-link--active{
+
+}
+.header-nav__menu-close-icon-container{
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+.header-nav__menu-close-icon{
+    fill: var(--primary-text-color);
+    height: 100%;
+}
+.header-nav__form-theme-menu-container{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.header-nav__form{
+    display: flex;
+}
+.header-nav__form-input{
+    box-shadow: 
+    0 0 0 0.125rem var(--primary-shadow-color),
+    0 0 0 0.25rem var(--primary-shadow-color);
+    border-radius: var(--border-radius);
+    padding: 0.25rem 0.5rem;
+}
+.header-nav__theme-icon-container{
+
+}
+.header-nav__theme-icon{
+
+}
+.header-nav__menu-icon-container{
+
+}
+.header-nav__menu-icon{
+
+}
