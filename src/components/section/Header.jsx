@@ -2,6 +2,23 @@ import logo from '../../assets/img/logo.png';
 import '../../styles/css/Header.css';
 
 const Header = () => {
+
+    const documentReady = () => {
+
+        const header = document.querySelector('.header');
+        const headerNav = document.querySelector('.header-nav');
+
+        const documentScroll = () => {
+        const { scrollY } = window;
+        header.classList.toggle('header--scroll', scrollY > 0);
+        headerNav.classList.toggle('header-nav--scroll', scrollY > 0);
+        };
+
+        document.addEventListener('scroll', documentScroll);
+    };
+
+    window.addEventListener('load', documentReady);
+
     return (
         <header className="header animate__animated animate__fadeIn">
         <nav className="header-nav">
@@ -17,7 +34,7 @@ const Header = () => {
                 <li className="header-nav__menu-link-item">
                     <a href="https://www.linkedin.com/in/elliotgaramendi/"
                     className="header-nav__menu-link header-nav__menu-link--active" target="_blank"
-                    rel="noopener noreferrer">Peter</a>
+                    rel="noopener noreferrer">Elliot</a>
                 </li>
                 <li className="header-nav__menu-link-item header-nav__menu-close-icon-container"
                     id="headerNavMenuCloseIconContainer">
@@ -35,7 +52,7 @@ const Header = () => {
             </div>
             <div className="header-nav__form-theme-menu-container">
                 <form className="header-nav__form">
-                <input type="search" placeholder="Película" className="header-nav__form-input"/>
+                <input type="search" placeholder="Película" className="header-nav__form-input" required />
                 </form>
                 <button className="header-nav__theme-icon-container" id="headerNavThemeIconContainer">
                 <span className="header-nav__theme-icon">🌚</span>
