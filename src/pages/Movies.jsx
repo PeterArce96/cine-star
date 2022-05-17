@@ -1,71 +1,36 @@
-import MoviesCard from "../components/movies/MoviesCard";
+import '../styles/css/Movies.css';
+import '../components/movies/MoviesCard';
+import { useEffect } from 'react';
 
 const Movies = () => {
-    // Esta data en un futuro se consumirá de un API
-    const pelicula = {
-        nombre: 'Sonic',
-        genero: 'Comedia'
-    }
-
+    useEffect(() => {
+        const fetchApi = async () => {
+            const endpoint = `${process.env.REACT_APP_URL}/discover/movie`;
+            const options = {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${process.env.REACT_APP_API_TOKEN}`,
+                    'Content-Type': 'application/json;charset=utf-8'
+                }
+            };
+            try {
+                const response = await fetch(endpoint, options);
+                const data = await response.json();
+                console.log(data);
+                } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchApi();
+    }, []);
     return (
         <main className="main">
-        <h1 className="body__title animate__animated animate__fadeIn">Movies</h1>
-
-        {/* Se puede pasar información a los hijos */}
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
-        <MoviesCard
-            pelicula={pelicula} 
-        />
+            <section className="movies">
+                <div className="movies__container">
+                    <h1 className="movies__title">🎥 Movies 🎥</h1>
+                    
+                </div>
+            </section>
         </main>
     );
 }
